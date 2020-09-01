@@ -1,2 +1,3 @@
-export * from './Reducer';
-export * from './Actions';
+export * from './reducer';
+export * from './actions';
+export * from './selectors';
