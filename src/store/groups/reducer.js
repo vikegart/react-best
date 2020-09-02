@@ -76,4 +76,4 @@ const reducerMapping = {
 
 }
 
-export const users = (state = initialState, action) => reducerMapping[action.type] ? reducerMapping[action.type](state, action.payload) : state;
+export const groups = (state = initialState, action) => reducerMapping[action.type] ? reducerMapping[action.type](state, action.payload) : state;
