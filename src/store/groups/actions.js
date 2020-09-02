@@ -1,5 +1,7 @@
 
 import { groupActionTypes } from "./actionTypes"
+import { v4 as uuidv4 } from 'uuid';
+
 
 
 export const applyFilter = filter => ({
@@ -15,7 +17,7 @@ export const deleteGroup = id => ({
 
 export const createGroup = name => ({
     type: groupActionTypes.create,
-    payload: name
+    payload: {name, id: uuidv4()}
 });
 
 export const addUserToGroup = ({idGroup, idUser}) => ({
