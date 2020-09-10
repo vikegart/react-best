@@ -1,4 +1,4 @@
-import userDataService from '../../services/apiService'
+import { userDataService } from '../../services'
 
 import { userActionTypes } from "./actionTypes"
 
