@@ -1,17 +1,14 @@
-import React from 'react';
-import { useDispatch } from 'react-redux'
+import React from "react";
+import { useDispatch } from "react-redux";
 
 import { Input } from "../input";
 
-import { applyFilter } from "../../store/groups";
+import { applyFilter } from "../../store/users";
 
-export const Filter = props => {
-    const dispatch = useDispatch();
+export const Filter = (props) => {
+  const dispatch = useDispatch();
 
-    const onChangeSearchInput = value => dispatch(applyFilter(value));
+  const onChangeSearchInput = (value) => dispatch(applyFilter(value));
 
-    return <Input
-        placeholder='Filter by name'
-        onChange={onChangeSearchInput}
-    />
-}
+  return <Input placeholder="Filter by name" onChange={onChangeSearchInput} />;
+};

@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 
 const usersMapSelector = (state) => state.users.list;
 const usersIdsSelector = (state) => state.users.ids;
-const filterSelector = (state) => state.user.filter;
+const filterSelector = (state) => state.users.filter;
 
 export const userByIdSelector = (state, id) => {
   return usersMapSelector(state)[id];

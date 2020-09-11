@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { UserItem } from "../userItem";
 
-import { getUsers } from "../../store/users";
+import { getUsers, filteredUserIds } from "../../store/users";
 
 export const UserList = (props) => {
-  const userIds = useSelector((state) => state.users.ids);
+  const userIds = useSelector((state) => filteredUserIds(state));
 
   const dispatch = useDispatch();
 
