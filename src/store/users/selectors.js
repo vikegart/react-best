@@ -1,17 +1,21 @@
-export const filterUserIds = (state) => {
-  const usersMap = state.users.list;
-  const filter = state.users.filter;
-  const filteredIds = filter
-    ? state.users.ids.filter((x) =>
-        usersMap[x].name.toLowerCase().includes(filter.toLowerCase())
-      )
-    : state.users.ids;
-
-  return filteredIds;
-};
+import { createSelector } from "reselect";
 
 const usersMapSelector = (state) => state.users.list;
+const usersIdsSelector = (state) => state.users.ids;
+const filterSelector = (state) => state.user.filter;
 
 export const userByIdSelector = (state, id) => {
   return usersMapSelector(state)[id];
 };
+
+export const filteredUserIds = createSelector(
+  usersMapSelector,
+  usersIdsSelector,
+  filterSelector,
+  (usersMap, usersIds, filter) =>
+    filter
+      ? usersIds.filter((x) =>
+          usersMap[x].name.toLowerCase().includes(filter.toLowerCase())
+        )
+      : usersIds
+);
