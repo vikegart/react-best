@@ -5,7 +5,7 @@ import { Input } from "../input";
 
 import { applyFilter } from "../../store/users";
 
-export const Filter = (props) => {
+export const FilterUser = (props) => {
   const dispatch = useDispatch();
 
   const onChangeSearchInput = (value) => dispatch(applyFilter(value));
