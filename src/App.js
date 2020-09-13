@@ -3,6 +3,7 @@ import React from "react";
 import { FilterUser } from "./components/filterUser";
 import { FilterGroup } from "./components/filterGroup";
 import { UserList } from "./components/userList";
+import { GroupList } from "./components/groupList";
 
 import "./App.css";
 
@@ -16,7 +17,7 @@ function App() {
         </div>
         <div className="row">
           <UserList />
-          <UserList />
+          <GroupList />
         </div>
       </header>
     </div>
