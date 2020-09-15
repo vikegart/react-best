@@ -1,25 +1,25 @@
-import {userDataService} from '../../services';
+import { userDataService } from "../../services";
 
-import {userActionTypes} from './actionTypes';
+import { userActionTypes } from "./actionTypes";
 
 export const getUsers = () => {
-  return async dispatch => {
-    const users = await userDataService.get ();
-    dispatch (getUsersStore (users));
+  return async (dispatch) => {
+    const users = await userDataService.get();
+    dispatch(getUsersStore(users));
   };
 };
 
-export const applyFilter = filter => ({
+export const applyFilter = (filter) => ({
   type: userActionTypes.applyFilter,
   payload: filter,
 });
 
-const getUsersStore = products => ({
+const getUsersStore = (users) => ({
   type: userActionTypes.getAll,
-  payload: products,
+  payload: users,
 });
 
-export const deleteUser = id => ({
+export const deleteUser = (id) => ({
   type: userActionTypes.delete,
   payload: id,
 });

@@ -1,10 +1,22 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import { userByIdSelector } from "../../store/users";
+import { userByIdSelector, deleteUser } from "../../store/users";
 
 export const UserItem = (props) => {
   const user = useSelector((state) => userByIdSelector(state, props.id));
+  const dispatch = useDispatch();
 
-  return <div className="user">{user ? user.name : "def"}</div>;
+  return (
+    <>
+      <div className="user">{user.name}</div>
+      <button
+        onClick={() => {
+          dispatch(deleteUser(user.id));
+        }}
+      >
+        delete
+      </button>
+    </>
+  );
 };
