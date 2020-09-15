@@ -8,7 +8,7 @@ const initialState = {
 
 const reducerMapping = {
   [userActionTypes.getAll]: (state, users) => {
-    const list = Object.create(null);
+    const list = {};
     users.forEach((user) => (list[user.id] = user));
     //TODO: add reduce
 
