@@ -10,7 +10,7 @@ export const GroupItem = React.memo((props) => {
 
   return (
     <div className="group">
-      <span>{group ? group.name : "def"}</span>
+      <span>{group.name}</span>
       <ul>
         {group.users.map((userId) => {
           return (
