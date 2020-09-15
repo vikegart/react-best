@@ -2,3 +2,12 @@
   display: flex;
   flex-direction: column;
 }
+
+.btn {
+  width: 200px;
+  height: 30px;
+}
+
+.btn-small {
+  width: 100px;
+}

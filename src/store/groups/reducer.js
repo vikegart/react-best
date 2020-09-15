@@ -51,7 +51,7 @@ const reducerMapping = {
         ...state.list,
         [idGroup]: {
           ...state.list[idGroup],
-          users: state.state.list[idGroup].filter((x) => x !== idUser),
+          users: state.list[idGroup].users.filter((x) => x !== idUser),
         },
       },
     };
