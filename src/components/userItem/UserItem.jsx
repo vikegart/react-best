@@ -15,7 +15,7 @@ export const UserItem = React.memo((props) => {
           dispatch(deleteUser(user.id));
         }}
       >
-        delete
+        delete From App
       </button>
     </>
   );

@@ -32,10 +32,6 @@ export const GroupList = (props) => {
     dispatch(addUserToGroup({ idGroup, idUser: 3 }));
   };
 
-  const handleDeleteUserFromGroup = (idGroup, idUser = 0, e) => {
-    dispatch(removeUserFromGroup({ idGroup, idUser }));
-  };
-
   return (
     <>
       <button className="btn btn-small" onClick={handleCreate}>
@@ -63,18 +59,6 @@ export const GroupList = (props) => {
                 onClick={(e) => handleAddAllUsersToGroup(id, e)}
               >
                 allUsersToGroup
-              </button>
-              <button
-                className="btn"
-                onClick={(e) => handleDeleteUserFromGroup(id, 0, e)}
-              >
-                delete id=0 from Group
-              </button>
-              <button
-                className="btn"
-                onClick={(e) => handleDeleteUserFromGroup(id, 1, e)}
-              >
-                delete id=1 from Group
               </button>
               <button
                 className="btn btn-small"
