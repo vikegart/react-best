@@ -7,7 +7,6 @@ import {
   createGroup,
   addUserToGroup,
   deleteGroup,
-  removeUserFromGroup,
   filteredGroupsIds,
 } from "../../store/groups";
 
