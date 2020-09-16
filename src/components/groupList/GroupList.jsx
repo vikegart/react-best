@@ -44,8 +44,8 @@ export const GroupList = (props) => {
       <div className="list">
         {groupIds.map((id) => {
           return (
-            <>
-              <GroupItem id={id} key={id} />
+            <React.Fragment key={id}>
+              <GroupItem id={id} />
               <button
                 className="btn"
                 onClick={(e) => handleAddUserToGroup(id, 0, e)}
@@ -82,7 +82,7 @@ export const GroupList = (props) => {
               >
                 delete group
               </button>
-            </>
+            </React.Fragment>
           );
         })}
       </div>

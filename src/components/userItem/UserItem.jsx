@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { userByIdSelector, deleteUser } from "../../store/users";
 
-export const UserItem = (props) => {
+export const UserItem = React.memo((props) => {
   const user = useSelector((state) => userByIdSelector(state, props.id));
   const dispatch = useDispatch();
 
@@ -19,4 +19,4 @@ export const UserItem = (props) => {
       </button>
     </>
   );
-};
+});
