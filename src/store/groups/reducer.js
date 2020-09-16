@@ -57,6 +57,21 @@ const reducerMapping = {
     };
   },
 
+  [groupActionTypes.deleteUserFromAllGroups]: (state, idUser) => {
+    const updatedList = {};
+    state.ids.forEach((idGroup) => {
+      updatedList[idGroup] = {
+        ...state.list[idGroup],
+        users: state.list[idGroup].users.filter((x) => x !== idUser),
+      };
+    });
+
+    return {
+      ...state,
+      list: { ...updatedList },
+    };
+  },
+
   [groupActionTypes.applyFilter]: (state, filter) => ({ ...state, filter }),
 };
 

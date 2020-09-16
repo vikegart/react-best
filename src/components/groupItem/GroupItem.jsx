@@ -14,7 +14,7 @@ export const GroupItem = React.memo((props) => {
       <ul>
         {group.users.map((userId) => {
           return (
-            <li key="userId">
+            <li key={userId}>
               <UserItem id={userId} />
             </li>
           );

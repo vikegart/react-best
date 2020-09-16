@@ -1,4 +1,5 @@
 import { userDataService } from "../../services";
+import { deleteUserFromAllGroups } from "../groups";
 
 import { userActionTypes } from "./actionTypes";
 
@@ -19,7 +20,14 @@ const getUsersStore = (users) => ({
   payload: users,
 });
 
-export const deleteUser = (id) => ({
+const deleteUserFromState = (id) => ({
   type: userActionTypes.delete,
   payload: id,
 });
+
+export const deleteUser = (id) => {
+  return (dispatch) => {
+    dispatch(deleteUserFromAllGroups(id));
+    dispatch(deleteUserFromState(id));
+  };
+};
